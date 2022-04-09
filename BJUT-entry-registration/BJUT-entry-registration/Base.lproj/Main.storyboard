@@ -59,6 +59,9 @@
                                                 <rect key="frame" x="207" y="0.0" width="207" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="qrcode" catalog="system" title="个人信息"/>
+                                                <connections>
+                                                    <action selector="generateQRcode:" destination="eYY-BU-06V" eventType="touchUpInside" id="tBD-x3-Xfh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

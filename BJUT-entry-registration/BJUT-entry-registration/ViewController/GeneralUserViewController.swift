@@ -9,6 +9,7 @@ import UIKit
 
 class GeneralUserViewController: UIViewController,UICollectionViewDataSource {
     @IBOutlet var collectionView: UICollectionView!
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Building.allBuildings.count
     }
@@ -36,13 +37,8 @@ class GeneralUserViewController: UIViewController,UICollectionViewDataSource {
         
     }
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         // Do any additional setup after loading the view.
     }
     
@@ -56,22 +52,43 @@ class GeneralUserViewController: UIViewController,UICollectionViewDataSource {
                 let webVC
                 = segue.destination as! BuildingWebViewController
                 webVC.building = building
+                webVC.request = building.generateBuildingRequest()
             }
         default:
             preconditionFailure("Unexpected segue identifier.")
         }
     }
     
+    @IBAction func generateQRcode(_ sender: UIButton){
+        
+        let jsonEncoder = JSONEncoder()
+        let jsonData = try! jsonEncoder.encode(Student.mySelf)
+        let image = generateQRCode(from: jsonData)
+        let imageView = UIImageView(image: image)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(imageView)
+        NSLayoutConstraint.activate([
+            imageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
+        ])
+        
+        
+    }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    private func generateQRCode(from data: Data) -> UIImage? {
+
+        if let filter = CIFilter(name: "CIQRCodeGenerator") {
+            filter.setValue(data, forKey: "inputMessage")
+            let transform = CGAffineTransform(scaleX: 6, y: 6)
+
+            if let output = filter.outputImage?.transformed(by: transform) {
+                return UIImage(ciImage: output)
+            }
+        }
+
+        return nil
+    }
+
     
 }
