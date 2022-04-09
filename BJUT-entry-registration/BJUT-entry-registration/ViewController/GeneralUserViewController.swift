@@ -54,41 +54,49 @@ class GeneralUserViewController: UIViewController,UICollectionViewDataSource {
                 webVC.building = building
                 webVC.request = building.generateBuildingRequest()
             }
+        case "showQRcode":
+            let QRcodeVC
+            = segue.destination
+            let jsonEncoder = JSONEncoder()
+            let jsonData = try! jsonEncoder.encode(Student.mySelf)
+            let image = generateQRCode(from: jsonData)
+            let imageView = UIImageView(image: image)
+            let lable = UILabel()
+            lable.text = "\(Student.mySelf.id) \(Student.mySelf.name)"
+            
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            lable.translatesAutoresizingMaskIntoConstraints = false
+            
+            QRcodeVC.view.addSubview(imageView)
+            QRcodeVC.view.addSubview(lable)
+            
+            NSLayoutConstraint.activate([
+                imageView.centerXAnchor.constraint(equalTo: QRcodeVC.view.safeAreaLayoutGuide.centerXAnchor),
+                imageView.centerYAnchor.constraint(equalTo: QRcodeVC.view.safeAreaLayoutGuide.centerYAnchor),
+                lable.centerXAnchor.constraint(equalTo: QRcodeVC.view.safeAreaLayoutGuide.centerXAnchor),
+                lable.topAnchor.constraint(equalTo: imageView.safeAreaLayoutGuide.bottomAnchor)
+            ])
+            
         default:
             preconditionFailure("Unexpected segue identifier.")
         }
     }
     
-    @IBAction func generateQRcode(_ sender: UIButton){
-        
-        let jsonEncoder = JSONEncoder()
-        let jsonData = try! jsonEncoder.encode(Student.mySelf)
-        let image = generateQRCode(from: jsonData)
-        let imageView = UIImageView(image: image)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addSubview(imageView)
-        NSLayoutConstraint.activate([
-            imageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            imageView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
-        ])
-        
-        
-    }
+
     
     private func generateQRCode(from data: Data) -> UIImage? {
-
+        
         if let filter = CIFilter(name: "CIQRCodeGenerator") {
             filter.setValue(data, forKey: "inputMessage")
             let transform = CGAffineTransform(scaleX: 6, y: 6)
-
+            
             if let output = filter.outputImage?.transformed(by: transform) {
                 return UIImage(ciImage: output)
             }
         }
-
+        
         return nil
     }
-
+    
     
 }

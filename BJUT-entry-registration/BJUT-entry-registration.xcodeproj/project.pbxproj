@@ -55,6 +55,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		378BB98F2801ABFB0079F78C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				378BB98C28010E7B0079F78C /* Student.swift */,
+				378BB986280076D80079F78C /* Buildings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		37A4326228006C14009FE104 = {
 			isa = PBXGroup;
 			children = (
@@ -74,11 +83,10 @@
 		37A4326D28006C14009FE104 /* BJUT-entry-registration */ = {
 			isa = PBXGroup;
 			children = (
+				378BB98F2801ABFB0079F78C /* Model */,
 				378BB98E280195740079F78C /* ViewController */,
 				37A4326E28006C14009FE104 /* AppDelegate.swift */,
 				37A4327028006C14009FE104 /* SceneDelegate.swift */,
-				378BB98C28010E7B0079F78C /* Student.swift */,
-				378BB986280076D80079F78C /* Buildings.swift */,
 				37A4327428006C14009FE104 /* Main.storyboard */,
 				37A4327728006C17009FE104 /* Assets.xcassets */,
 				37A4327928006C17009FE104 /* LaunchScreen.storyboard */,
