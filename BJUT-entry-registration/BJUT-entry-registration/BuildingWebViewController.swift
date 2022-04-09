@@ -13,8 +13,7 @@ class BuildingWebViewController: UIViewController,WKUIDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL(string: "https://www.sogou.com")!
-        let request = URLRequest(url: url)
+        let request = building.generateBuildingRequest()
         webView.uiDelegate = self
         webView.load(request)
         // Do any additional setup after loading the view.

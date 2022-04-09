@@ -15,12 +15,18 @@ class GeneralUserViewController: UIViewController,UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BuildingCell", for: indexPath)
-        let title = UILabel(frame: CGRect(x: 0, y: 0, width: cell.bounds.size.width, height: 50))
+        let title = UILabel(frame: CGRect(x: 0, y: 0, width: cell.bounds.size.width, height: 30))
         title.text = Building.allBuildings[indexPath.row].name
-        title.font = UIFont(name: "AvenirNext-Bold", size: 10)
-        title.textAlignment = .center
-        cell.contentView.addSubview(title)
         
+        title.textAlignment = .center
+        
+        //增加圆角矩形
+        cell.contentView.layer.cornerRadius = 10
+        cell.contentView.layer.borderWidth = 1.0
+        cell.contentView.layer.borderColor = UIColor.blue.cgColor
+        cell.contentView.layer.masksToBounds = true
+        
+        cell.contentView.addSubview(title)
         return cell
     }
     

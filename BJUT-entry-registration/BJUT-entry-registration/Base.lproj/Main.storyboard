@@ -23,18 +23,19 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="324-2F-onX">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="738"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gf1-Cj-msq">
-                                            <size key="itemSize" width="179" height="155"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gf1-Cj-msq">
+                                            <size key="itemSize" width="150" height="30"/>
+                                            <size key="estimatedItemSize" width="150" height="30"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BuildingCell" id="J62-pz-a3w">
-                                                <rect key="frame" x="0.0" y="0.0" width="179" height="155"/>
+                                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="BuildingCell" id="J62-pz-a3w">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="19K-Jw-IEm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="155"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </collectionViewCellContentView>
                                                 <connections>
@@ -46,11 +47,21 @@
                                             <outlet property="dataSource" destination="eYY-BU-06V" id="1fG-zN-KwE"/>
                                         </connections>
                                     </collectionView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wd2-Ci-CE0">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bjf-Cm-ubC">
                                         <rect key="frame" x="0.0" y="738" width="414" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="square.and.pencil" catalog="system" title="扫码登记"/>
-                                    </button>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wd2-Ci-CE0">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="square.and.pencil" catalog="system" title="扫码登记"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cfd-go-ohN">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="qrcode" catalog="system" title="个人信息"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -96,7 +107,7 @@
         <!--志愿者-->
         <scene sceneID="ai3-cD-x5l">
             <objects>
-                <viewController id="sSW-C1-rm2" sceneMemberID="viewController">
+                <viewController id="sSW-C1-rm2" customClass="VolunteerViewController" customModule="BJUT_entry_registration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xtm-eI-tii">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,6 +128,9 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="sSW-C1-rm2" id="ohP-IU-Wlc"/>
+                                        </connections>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" id="Ojb-B3-e0R">
                                         <rect key="frame" x="0.0" y="738" width="414" height="31"/>
@@ -126,6 +140,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system" title="上传数据"/>
+                                                <connections>
+                                                    <action selector="uploadData:" destination="sSW-C1-rm2" eventType="touchUpInside" id="nJ6-et-D9N"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sm-0z-FPs">
                                                 <rect key="frame" x="207" y="0.0" width="207" height="31"/>
@@ -136,17 +153,26 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="MEm-OL-6aE">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4NL-Tq-y8T"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4NL-Tq-y8T" firstAttribute="trailing" secondItem="HKG-fN-E9u" secondAttribute="trailing" id="0OM-Df-2X1"/>
-                            <constraint firstItem="4NL-Tq-y8T" firstAttribute="bottom" secondItem="HKG-fN-E9u" secondAttribute="bottom" id="3aK-6a-0FH"/>
-                            <constraint firstItem="HKG-fN-E9u" firstAttribute="leading" secondItem="4NL-Tq-y8T" secondAttribute="leading" id="Bii-xm-Qpv"/>
-                            <constraint firstItem="HKG-fN-E9u" firstAttribute="top" secondItem="4NL-Tq-y8T" secondAttribute="top" id="qFY-y3-v0q"/>
+                            <constraint firstItem="MEm-OL-6aE" firstAttribute="centerX" secondItem="Xtm-eI-tii" secondAttribute="centerX" id="BJI-EY-t07"/>
+                            <constraint firstItem="HKG-fN-E9u" firstAttribute="top" secondItem="4NL-Tq-y8T" secondAttribute="top" id="D70-If-HeQ"/>
+                            <constraint firstItem="MEm-OL-6aE" firstAttribute="centerY" secondItem="Xtm-eI-tii" secondAttribute="centerY" id="J9R-XY-94v"/>
+                            <constraint firstItem="HKG-fN-E9u" firstAttribute="trailing" secondItem="4NL-Tq-y8T" secondAttribute="trailing" id="ZMN-xd-Yd3"/>
+                            <constraint firstItem="HKG-fN-E9u" firstAttribute="leading" secondItem="4NL-Tq-y8T" secondAttribute="leading" id="b7C-Nx-vVR"/>
+                            <constraint firstItem="HKG-fN-E9u" firstAttribute="bottom" secondItem="4NL-Tq-y8T" secondAttribute="bottom" id="ekA-C0-3Uq"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="志愿者" image="person.3.fill" catalog="system" id="wnn-yu-ptl"/>
+                    <connections>
+                        <outlet property="spinner" destination="MEm-OL-6aE" id="xGx-jE-RaO"/>
+                        <outlet property="tableView" destination="KQg-Ox-IPM" id="6hh-cU-FPi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4b-TO-OWU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -175,6 +201,7 @@
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.crop.square.fill" catalog="system" width="128" height="114"/>
+        <image name="qrcode" catalog="system" width="128" height="114"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">

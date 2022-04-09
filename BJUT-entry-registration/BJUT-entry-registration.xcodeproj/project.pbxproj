@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		378BB97F2800724F0079F78C /* UserCookieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378BB97E2800724F0079F78C /* UserCookieInfo.swift */; };
-		378BB981280073020079F78C /* UserCookieInfoTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378BB980280073020079F78C /* UserCookieInfoTemplate.swift */; };
 		378BB983280075390079F78C /* GeneralUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378BB982280075390079F78C /* GeneralUserViewController.swift */; };
 		378BB985280075660079F78C /* VolunteerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378BB984280075660079F78C /* VolunteerViewController.swift */; };
 		378BB987280076D80079F78C /* Buildings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378BB986280076D80079F78C /* Buildings.swift */; };
 		378BB98928007DCF0079F78C /* BuildingWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378BB98828007DCF0079F78C /* BuildingWebViewController.swift */; };
+		378BB98D28010E7B0079F78C /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378BB98C28010E7B0079F78C /* Student.swift */; };
 		37A4326F28006C14009FE104 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A4326E28006C14009FE104 /* AppDelegate.swift */; };
 		37A4327128006C14009FE104 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A4327028006C14009FE104 /* SceneDelegate.swift */; };
 		37A4327328006C14009FE104 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A4327228006C14009FE104 /* ViewController.swift */; };
@@ -22,12 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		378BB97E2800724F0079F78C /* UserCookieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCookieInfo.swift; sourceTree = "<group>"; };
-		378BB980280073020079F78C /* UserCookieInfoTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCookieInfoTemplate.swift; sourceTree = "<group>"; };
 		378BB982280075390079F78C /* GeneralUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUserViewController.swift; sourceTree = "<group>"; };
 		378BB984280075660079F78C /* VolunteerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerViewController.swift; sourceTree = "<group>"; };
 		378BB986280076D80079F78C /* Buildings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildings.swift; sourceTree = "<group>"; };
 		378BB98828007DCF0079F78C /* BuildingWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingWebViewController.swift; sourceTree = "<group>"; };
+		378BB98C28010E7B0079F78C /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		37A4326B28006C14009FE104 /* BJUT-entry-registration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BJUT-entry-registration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A4326E28006C14009FE104 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37A4327028006C14009FE104 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,9 +68,8 @@
 			children = (
 				37A4326E28006C14009FE104 /* AppDelegate.swift */,
 				37A4327028006C14009FE104 /* SceneDelegate.swift */,
+				378BB98C28010E7B0079F78C /* Student.swift */,
 				37A4327228006C14009FE104 /* ViewController.swift */,
-				378BB97E2800724F0079F78C /* UserCookieInfo.swift */,
-				378BB980280073020079F78C /* UserCookieInfoTemplate.swift */,
 				378BB982280075390079F78C /* GeneralUserViewController.swift */,
 				378BB986280076D80079F78C /* Buildings.swift */,
 				37A4327428006C14009FE104 /* Main.storyboard */,
@@ -157,14 +154,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				378BB983280075390079F78C /* GeneralUserViewController.swift in Sources */,
-				378BB97F2800724F0079F78C /* UserCookieInfo.swift in Sources */,
 				37A4327328006C14009FE104 /* ViewController.swift in Sources */,
 				378BB987280076D80079F78C /* Buildings.swift in Sources */,
 				37A4326F28006C14009FE104 /* AppDelegate.swift in Sources */,
-				378BB981280073020079F78C /* UserCookieInfoTemplate.swift in Sources */,
 				378BB985280075660079F78C /* VolunteerViewController.swift in Sources */,
 				378BB98928007DCF0079F78C /* BuildingWebViewController.swift in Sources */,
 				37A4327128006C14009FE104 /* SceneDelegate.swift in Sources */,
+				378BB98D28010E7B0079F78C /* Student.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
