@@ -51,16 +51,32 @@
                                         <rect key="frame" x="0.0" y="738" width="414" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wd2-Ci-CE0">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="square.and.pencil" catalog="system" title="扫码登记"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cfd-go-ohN">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="31"/>
+                                                <rect key="frame" x="103.5" y="0.0" width="103.5" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="qrcode" catalog="system" title="个人信息"/>
                                                 <connections>
                                                     <segue destination="Np5-0x-mCt" kind="show" identifier="showQRcode" id="AhZ-31-nQE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAH-p5-SWn">
+                                                <rect key="frame" x="207" y="0.0" width="103.5" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="person.badge.minus" catalog="system" title="出校码"/>
+                                                <connections>
+                                                    <segue destination="v43-lk-TCl" kind="presentation" identifier="showOutWeb" id="Xhr-K8-1pE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrt-6h-adb">
+                                                <rect key="frame" x="310.5" y="0.0" width="103.5" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="person.crop.circle.badge.plus" catalog="system" title="入校码"/>
+                                                <connections>
+                                                    <segue destination="v43-lk-TCl" kind="presentation" identifier="showInWeb" id="UBc-0K-vZI"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -218,9 +234,14 @@
             <point key="canvasLocation" x="-470" y="-175"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="UBc-0K-vZI"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
+        <image name="person.badge.minus" catalog="system" width="128" height="124"/>
+        <image name="person.crop.circle.badge.plus" catalog="system" width="128" height="113"/>
         <image name="person.crop.square.fill" catalog="system" width="128" height="114"/>
         <image name="qrcode" catalog="system" width="128" height="114"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>

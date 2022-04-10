@@ -54,6 +54,14 @@ class GeneralUserViewController: UIViewController,UICollectionViewDataSource {
                 webVC.building = building
                 webVC.request = building.generateBuildingRequest()
             }
+        case "showOutWeb":
+            let webVC
+            = segue.destination as! BuildingWebViewController
+            webVC.request = URLRequest(url: URL(string: "http://www.qianwanbo.cn:8081/accesscode/login/queryAndOutschool")!)
+        case "showInWeb":
+            let webVC
+            = segue.destination as! BuildingWebViewController
+            webVC.request = URLRequest(url: URL(string: "http://www.qianwanbo.cn:8081/accesscode/login/queryAndInschool")!)
         case "showQRcode":
             let QRcodeVC
             = segue.destination
